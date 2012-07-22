@@ -1,0 +1,18 @@
+{
+  "name": "stats-page",
+  "author": "Dave Eddy <dave@daveeddy.com> (http://www.daveeddy.com)",
+  "description": "Create a /stats page http-server for a server application",
+  "version": "0.0.0",
+  "repository": {
+    "url": "https://github.com/bahamas10/node-stats-page.git",
+    "type": "git"
+  },
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "keywords": [ "stats", "statistics", "alerting", "alerts", "uptime" ]
+}
