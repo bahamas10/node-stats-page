@@ -3,7 +3,7 @@ Stats Server for Node Applications
 
 Create a /stats page http-server for a server application
 
-What this means is make useful application information available via http
+Fire up an http server that you can query for stats on a running node process
 
 Usage
 -----
@@ -83,9 +83,6 @@ Then drill in further to get some meaningful information
     $ curl -sS localhost:8745/process/version | json
     v0.6.15
 
-This provides a lot of information you can gather about your app while it
-is running.  You can use this for alerting, graphing, etc.
-
 To disable the server for whatever reason, you simply invoke the `close` method
 
 ``` js
@@ -120,12 +117,22 @@ when the url is queried.  The function takes one argument, a callback to run
 with a possible error, and data to send to the user (it will be JSON.stringifed
 for you).
 
-
 Install
 -------
 
     npm install stats-page
 
+FAQ
+---
+
+### Are there any other routes than /process ?
+
+`process` had the easiest stats to expose.  If you have any more stats that are generic
+enough to expose fork and make a pull request.
+
+### Does this work with connect/middle-ware/express/some framework?
+
+I don't know.
 
 License
 -------
