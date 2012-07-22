@@ -3,6 +3,8 @@ Stats Server for Node Applications
 
 Create a /stats page http-server for a server application
 
+What this means is make useful application information available via http
+
 Usage
 -----
 
@@ -23,9 +25,6 @@ stats_page.start(8745);
 
 This will fire up a stats server on port 8745 that you can query
 
-**NOTE:** this will listen on `0.0.0.0` by default (as does `http.createServer`),
-you can specify a second argument to the `start` method of `localhost` to restrict
-access.
 
     $ curl -sS localhost:8745/ | json
 
@@ -92,6 +91,10 @@ To disable the server for whatever reason, you simply invoke the `close` method
 ``` js
 stats_page.close();
 ```
+
+**NOTE:** stats-server will listen on `0.0.0.0` by default (as does `http.createServer`),
+you can specify a second argument to the `start` method of 'localhost' to restrict
+access.
 
 Customization
 -------------
