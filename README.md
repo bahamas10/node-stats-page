@@ -92,7 +92,7 @@ To disable the server for whatever reason, you simply invoke the `close` method
 stats_page.close();
 ```
 
-**NOTE:** stats-server will listen on `0.0.0.0` by default (as does `http.createServer`),
+**NOTE:** stats-page will listen on `0.0.0.0` by default (as does `http.createServer`),
 you can specify a second argument to the `start` method of 'localhost' to restrict
 access.
 
@@ -100,7 +100,7 @@ Customization
 -------------
 
 You will no doubt have information specific to your app that you would like to
-expose.  You can add your own routes using the `add\_route` function
+expose.  You can add your own routes using the `add_route` function
 
 ``` js
 stats_page.add_route('/custom', function(cb) {
