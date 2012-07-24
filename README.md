@@ -40,6 +40,7 @@ This returns the next route you can query
 
 ``` json
 [
+  "arch",
   "argv",
   "cwd",
   "env",
