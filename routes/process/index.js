@@ -1,4 +1,5 @@
 var routes = {
+      'arch'        : function(cb) { cb(null, process.arch); },
       'argv'        : function(cb) { cb(null, process.argv); },
       'cwd'         : function(cb) { cb(null, process.cwd()); },
       'env'         : function(cb) { cb(null, process.env); },
