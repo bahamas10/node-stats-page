@@ -1,4 +1,4 @@
-Stats Server for Node Applications
+Stats(4) Server for Node Applications
 ==================================
 
 Create a /stats page http-server for a server application
@@ -30,6 +30,7 @@ This will fire up a stats server on port 8745 that you can query
 
 ``` json
 [
+  "ping",
   "process"
 ]
 ```
@@ -83,6 +84,8 @@ Then drill in further to get some meaningful information
     32
     $ curl -sS localhost:8745/process/version | json
     v0.6.15
+    $ curl -sS localhost:8745/ping | json
+    pong
 
 To disable the server for whatever reason, you simply invoke the `close` method
 

@@ -1,4 +1,5 @@
 var routes = {
+      'ping': require('./ping'),
       'process': require('./process')
     };
 
