@@ -1,4 +1,4 @@
-Stats(4) Server for Node Applications
+Stats Server for Node Applications
 ==================================
 
 Create a /stats page http-server for a server application
