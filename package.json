@@ -2,7 +2,7 @@
   "name": "stats-page",
   "author": "Dave Eddy <dave@daveeddy.com> (http://www.daveeddy.com)",
   "description": "Create a /stats page http-server for a server application",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "url": "https://github.com/bahamas10/node-stats-page.git",
     "type": "git"
