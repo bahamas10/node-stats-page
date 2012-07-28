@@ -1,6 +1,7 @@
 var routes = {
-      'ping': require('./ping'),
-      'process': require('./process')
+      'ping'    : require('./ping'),
+      'process' : require('./process'),
+      'stats'   : require('./stats')
     };
 
 

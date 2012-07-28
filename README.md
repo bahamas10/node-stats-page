@@ -31,7 +31,8 @@ This will fire up a stats server on port 8745 that you can query
 ``` json
 [
   "ping",
-  "process"
+  "process",
+  "stats"
 ]
 ```
 
@@ -129,7 +130,7 @@ Install
 FAQ
 ---
 
-### Are there any other routes than /process ?
+### Are there any other meaningful routes than /process ?
 
 `process` had the easiest stats to expose.  If you have any more stats that are generic
 enough to expose fork and make a pull request.
@@ -137,6 +138,12 @@ enough to expose fork and make a pull request.
 ### Does this work with connect/middle-ware/express/some framework?
 
 I don't know.
+
+### Is this information safe to leave exposed?
+
+Short answer: no.  Process information like this can be a security concern, especially
+having information like ENV variables visible.  It's your job to make sure this host
+is properly ACL'd if exposed externally, or to lock this down to localhost.
 
 License
 -------
