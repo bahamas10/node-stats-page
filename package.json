@@ -8,11 +8,19 @@
     "type": "git"
   },
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "routes": "~0.1.1"
+  },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
     "node": "*"
   },
-  "keywords": [ "stats", "statistics", "alerting", "alerts", "uptime" ]
+  "keywords": [
+    "stats",
+    "statistics",
+    "alerting",
+    "alerts",
+    "uptime"
+  ]
 }

@@ -1,22 +1,31 @@
 var routes = {
-      'arch'        : function(cb) { cb(null, process.arch); },
-      'argv'        : function(cb) { cb(null, process.argv); },
-      'cwd'         : function(cb) { cb(null, process.cwd()); },
-      'env'         : function(cb) { cb(null, process.env); },
-      'execPath'    : function(cb) { cb(null, process.execPath); },
-      'features'    : function(cb) { cb(null, process.features); },
-      'getgid'      : function(cb) { cb(null, process.getgid()); },
-      'getuid'      : function(cb) { cb(null, process.getuid()); },
-      'memoryUsage' : function(cb) { cb(null, process.memoryUsage()); },
-      'pid'         : function(cb) { cb(null, process.pid); },
-      'platform'    : function(cb) { cb(null, process.platform); },
-      'uptime'      : function(cb) { cb(null, process.uptime()); },
-      'uvCounters'  : function(cb) { cb(null, process.uvCounters()); },
-      'version'     : function(cb) { cb(null, process.version); },
-      'versions'    : function(cb) { cb(null, process.versions); },
+      'arch'        : process.arch,
+      'argv'        : process.argv,
+      'cwd'         : process.cwd,
+      'env'         : process.env,
+      'execPath'    : process.execPath,
+      'features'    : process.features,
+      'getgid'      : process.getgid,
+      'getuid'      : process.getuid,
+      'memoryUsage' : process.memoryUsage,
+      'pid'         : process.pid,
+      'platform'    : process.platform,
+      'uptime'      : process.uptime,
+      'uvCounters'  : process.uvCounters,
+      'version'     : process.version,
+      'versions'    : process.versions,
     };
 
-module.exports = function(parts) {
-  if (!parts[0]) return function(cb) { cb(null, Object.keys(routes)); };
-  return routes[parts[0]];
+module.exports = function(req, res, route) {
+  if (!route.params.type) return res.end(JSON.stringify(Object.keys(routes)));
+
+  if (!routes[route.params.type]) return res.end();
+
+  var func = routes[route.params.type],
+      value = func;
+  if (typeof func === 'function') {
+    value = func();
+  }
+
+  res.end(JSON.stringify(value));
 };

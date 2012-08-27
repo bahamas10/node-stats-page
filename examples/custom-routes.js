@@ -1,5 +1,7 @@
-var stats_page = require('..');
+var stats_page = require('..')(8745, 'localhost');
 
-stats_page.add_route('/custom', function(cb) { cb(null, 'My Custom Route'); });
+stats_page.addRoute('/custom', function(req, res) {
+  res.end('My Custom Route');
+});
 
-stats_page.start(8745, 'localhost');
+console.log('Listening on http://%s:%d', 'localhost', 8745);

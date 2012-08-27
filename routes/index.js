@@ -5,15 +5,14 @@ var routes = {
     };
 
 
-module.exports = function(url) {
-  var parts = url.split('/').slice(1),
-      route = routes[parts[0]];
+module.exports = function(router) {
+  router.addRoute('/', all);
 
-  // Index page
-  if (!parts[0]) return function(cb) { cb(null, Object.keys(routes)); };
-
-  // Not routable
-  if (!route) return undefined;
-
-  return route(parts.slice(1));
+  Object.keys(routes).forEach(function(route) {
+    router.addRoute('/' + route + '/:type?', routes[route]);
+  });
 };
+
+function all(req, res) {
+  res.end(JSON.stringify(Object.keys(routes)));
+}

@@ -1,3 +1,3 @@
-module.exports = function(parts) {
-  return function(cb) { cb(null, 'pong'); };
+module.exports = function(req, res) {
+  res.end('pong');
 };
