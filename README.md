@@ -9,7 +9,7 @@ Usage
 -----
 
 ``` js
-var stats_page = require('stats-page')(port, [host]);
+var stats_page = require('stats-page')(port, [host], [callback]);
 ```
 
 Example

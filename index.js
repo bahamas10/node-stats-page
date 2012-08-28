@@ -1,16 +1,15 @@
 var http = require('http'),
     router = new require('routes').Router(),
     routes = require('./routes')(router),
-    server;
+    server = http.createServer(on_request);
 
 module.exports = start;
 
 /**
  * Start the webserver on a given host and port
  */
-function start(port, host) {
-  port = port || 8745;
-  server = http.createServer(on_request).listen(port, host);
+function start() {
+  server.listen.apply(server, arguments);
   return router;
 }
 
