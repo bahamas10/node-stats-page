@@ -9,7 +9,8 @@ Usage
 -----
 
 ``` js
-var stats_page = require('stats-page')(port, [host], [callback]);
+var stats_page = require('stats-page');
+stats_page.listen(port, [host], [callback]);
 ```
 
 Example
@@ -18,7 +19,7 @@ Example
 To create a stats server for your application use the following code
 
 ``` js
-var stats_page = require('stats-page')(8745);
+var stats_page = require('stats-page').listen(8745);
 ```
 
 This will fire up a stats server on port 8745 that you can query
@@ -97,7 +98,7 @@ You will no doubt have information specific to your app that you would like to
 expose.  You can add your own routes using the `addRoute` function
 
 ``` js
-stats_page.addRoute('/custom', function(req, res) {
+stats_page.router.addRoute('/custom', function(req, res) {
   res.end('My Custom Route');
 });
 ```

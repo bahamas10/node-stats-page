@@ -3,15 +3,8 @@ var http = require('http'),
     routes = require('./routes')(router),
     server = http.createServer(on_request);
 
-module.exports = start;
-
-/**
- * Start the webserver on a given host and port
- */
-function start() {
-  server.listen.apply(server, arguments);
-  return router;
-}
+module.exports = server;
+module.exports.router = router;
 
 /**
  * Request callback for the server
