@@ -22,6 +22,8 @@ To create a stats server for your application use the following code
 var stats_page = require('stats-page').listen(8745);
 ```
 
+`require('stats-page')` returns an HTTP server object
+
 This will fire up a stats server on port 8745 that you can query
 
     $ curl -sS localhost:8745/ | json
@@ -88,7 +90,7 @@ Then drill in further to get some meaningful information
 
 
 **NOTE:** stats-page will listen on `0.0.0.0` by default (as does `http.createServer`),
-you can specify a second argument to the `start` method of 'localhost' to restrict
+you can specify a second argument to the `listen` method of 'localhost' to restrict
 access.
 
 Customization
